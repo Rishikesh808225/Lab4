@@ -1,0 +1,110 @@
+<html>
+<head>
+<title> Lab 4 </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage coke; 
+PImage sprite;
+PImage redbull;
+
+void setup(){
+
+coke = loadImage("images/coke.png");
+sprite = loadImage("images/sprite.png")
+redbull = loadImage("images/redbull.png")
+size(3000,3000);
+background(247,255,197);
+frameRate( 30 );
+
+}
+
+	
+void draw()
+{
+	background(247,255,197);
+	image(coke,0,0);
+	image(sprite,400,0,150,418);
+	image(redbull,600,0,350,418);
+	//coke
+	fill(0,0,205);
+	rect(120,420,145,50);
+	fill(255,255,255);
+	textSize(40);
+	text("$10",157,460);
+	//sprite
+	fill(0,0,205);
+	rect(400,420,150,50);
+	fill(255,255,255);
+	textSize(40);
+	text("$12",440,460);
+	//redbull
+	fill(0,0,205);
+	rect(710,420,133,50);
+	fill(255,255,255);
+	textSize(40);
+	text("$20",743,460);
+	fill(0,0,0);
+	text(mouseX,40,50);
+	text(mouseY,40,100);
+	
+	if (mousePressed == true && mouseButton == LEFT)
+	{
+		if (mouseY > 420 && mouseY < 470 &&
+			mouseX > 120 && mouseX < 265)
+		{	
+			fill(0,255,0);
+			rect(120,420,145,50);
+			fill(0,0,0)
+			textSize(40);
+			text("$10",157,460);
+			fill(193,39,39);
+			textSize(30);
+			text("Coke Purchased!",360,570);
+		}
+	}
+	
+	if (mousePressed == true && mouseButton == LEFT)
+	{
+		if (mouseY > 420 && mouseY < 470 &&
+			mouseX > 400 && mouseX < 550)
+		{	
+			fill(0,255,0);
+			rect(400,420,150,50);
+			fill(0,0,0);
+			textSize(40);
+			text("$12",440,460);
+			fill(193,39,39);
+			textSize(30);
+			text("Sprite Purchased!",360,570);
+		}
+	}
+	
+	if (mousePressed == true && mouseButton == LEFT)
+	{
+		if (mouseY > 420 && mouseY < 470 &&
+			mouseX > 710 && mouseX < 845)
+		{	
+			fill(0,255,0);
+			rect(710,420,133,50);
+			fill(0,0,0);
+			textSize(40);
+			text("$20",743,460);
+			fill(193,39,39);
+			textSize(30);
+			text("Redbull Purchased!",355,570);
+			
+		}
+	}
+
+}
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>
+
